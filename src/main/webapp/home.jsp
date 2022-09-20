@@ -29,6 +29,7 @@ if(sess.getAttribute("hello")==null)//need to improve later
 
 
 %>
+this is Git change
 </br></br>
 <a href="myEventServlet">view my event</a>
 </br></br>
