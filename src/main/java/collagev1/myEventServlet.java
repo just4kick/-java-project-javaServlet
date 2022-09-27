@@ -82,7 +82,7 @@ public class myEventServlet extends HttpServlet {
 			out.print("<b>Event Detail  </b>"+rs.getString(7)+"<br> ");
 			out.print("<b>Upload Date</b>  "+rs.getString(8)+"<br> ");
 			out.println("<b>Time</b>  "+rs.getString(9)+"<br> ");
-		
+			out.println("<a href='viewEventServlet?eventID="+eventID+"'>view</a>");
 			out.print("<a href='editEventServlet?eventID="+eventID +"'>edit</a>  ");
 			out.println("<a href='deleteEventServlet?eventID="+eventID+"'>delete</a>");
 			
