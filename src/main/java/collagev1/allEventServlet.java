@@ -86,7 +86,7 @@ public class allEventServlet extends HttpServlet {
 			
 			
 			
-			
+			out.println("<a href='viewEventServlet?eventID="+eventID+"'>view</a>");
 //			out.print("<a href='editEventServlet?eventID="+eventID +"'>edit</a>  ");
 //			out.println("<a href='deleteEventServlet?eventID="+eventID+"'>delete</a>");
 			
