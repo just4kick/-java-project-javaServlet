@@ -45,8 +45,8 @@ public class viewEventServlet extends HttpServlet{
 			st.setInt(1,eventId);
 			ResultSet rs=st.executeQuery();
 			rs.next();
-			if(sess.getAttribute("hello").equals(rs.getInt(1)))
-			{
+//			if(sess.getAttribute("hello").equals(rs.getInt(1)))
+//			{
 			String name=rs.getString(2);
 			String eventname=rs.getString(3);
 			String college=rs.getString(4);
@@ -70,12 +70,12 @@ public class viewEventServlet extends HttpServlet{
 			rd.forward(request,response);
 			
 			
-			}else
-			{
-				
-				out.println("<a href='home.jsp'>home</a>   ");
-				out.println("event does not belong to you");
-			}
+//			}else
+//			{
+//				
+//				out.println("<a href='home.jsp'>home</a>   ");
+//				out.println("event does not belong to you");
+//			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -7,6 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+HttpSession sess = request.getSession(false);
+if(sess.getAttribute("hello").equals(request.getAttribute("registerID")))
+{
+out.print("<a href='myEventServlet'>Back My Event</a><br><br>");
+out.print("<a href='allEventServlet'>all Event</a><br><br>");
+}
+else {
+
+	out.print("<a href='allEventServlet'>all Event</a><br><br>");
+}
+
+
+
+%>
+
 
 
 ${name }
@@ -37,7 +53,7 @@ ${error }
 <input type = "submit" value="Comment">
 </form>
 <% 
-HttpSession sess = request.getSession();
+
 //String ps=request.getParameter("password");
 //out.print(sess.getAttribute("hello"));
 if(sess.getAttribute("hello")==null)//need to improve later
@@ -56,6 +72,9 @@ if(request.getAttribute("eventname")==null)
 	RequestDispatcher rd=request.getRequestDispatcher("myEventServlet"); 	
 	rd.forward(request,response);
 }
+
+
+
 %>
 
 </body>
