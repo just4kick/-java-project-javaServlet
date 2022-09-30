@@ -50,6 +50,7 @@ public class deleteEventServlet extends HttpServlet {
 		int registerIDdb=rs1.getInt(1);
 		int registerID=(int) sess.getAttribute("hello");
 		if(registerIDdb==registerID) {
+			if(deleteCommentServlet.delAllcomment(eventId)) {
 			st = con.prepareStatement(query);
 			st.setInt(1, eventId);
 			st.executeUpdate();
@@ -57,6 +58,13 @@ public class deleteEventServlet extends HttpServlet {
 			request.setAttribute("error",msg);
 			RequestDispatcher rd=request.getRequestDispatcher("myEventServlet"); 	
 			rd.include(request,response);
+		}
+			else {
+				String msg="Facing problem while deleting comment on event";	
+				request.setAttribute("error",msg);
+				RequestDispatcher rd=request.getRequestDispatcher("home.jsp"); 	
+				rd.forward(request,response);
+		}
 		}
 		else
 		{
