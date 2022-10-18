@@ -26,7 +26,7 @@ public class loginDao {
 				
 			String db = "student";
 			Connection con =database.connect(db);
-			String query="select registerID , email from studentdetail where registerID=? or email=?";	
+			String query="select registerID , email from studentdetail where registerID=? and password=?";	
 			PreparedStatement st=con.prepareStatement(query);
 			st.setInt(1,userregID);  
 			st.setString(2,userpass); 
