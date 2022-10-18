@@ -11,12 +11,14 @@ public class addEventDao {
 		boolean status=false;
 		try
 		{
-			String url="jdbc:mysql://localhost:3306/student";
-			String uname="root";
-			String pass="super";
+//			String url="jdbc:mysql://localhost:3306/student";
+//			String uname="root";
+//			String pass="super";
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Connection con = DriverManager.getConnection(url,uname,pass);
+			String db = "student";
+			Connection con =database.connect(db);
 			String query="insert into eventlist values(?,?,?,?,?,?,?,current_date(),current_time(),0);";
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,uname,pass);
 			PreparedStatement st=con.prepareStatement(query);
 			st.setInt(1,registerID);
 			st.setString(2,name);

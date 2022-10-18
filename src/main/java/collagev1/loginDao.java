@@ -12,15 +12,21 @@ public class loginDao {
 		boolean status=false; 
 		
 			try {
-			String url="jdbc:mysql://localhost:3306/student";
-			String uname="root";
-			String pass="super";
-			String query="select registerID , email from studentdetail where registerID=? or email=?";
+//			String url="jdbc:mysql://localhost:3306/student";
+//			String uname="root";
+//			String pass="super";
+			
 			//String query="select * from login where emaildb='" +useremail+ "'and passdb='"+userpass+"'";
 			//String data="";
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,uname,pass);
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Connection con = DriverManager.getConnection(url,uname,pass);
 			//Statement st=con.createStatement();
+				
+				
+				
+			String db = "student";
+			Connection con =database.connect(db);
+			String query="select registerID , email from studentdetail where registerID=? or email=?";	
 			PreparedStatement st=con.prepareStatement(query);
 			st.setInt(1,userregID);  
 			st.setString(2,userpass); 
