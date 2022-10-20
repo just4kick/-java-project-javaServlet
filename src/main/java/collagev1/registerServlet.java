@@ -54,7 +54,7 @@ public class registerServlet extends HttpServlet {
 			}
 		}else
 		{
-			String errormsg="password not match";	
+			String errormsg="Enter same password in both password box";	
 			request.setAttribute("error",errormsg);
 			RequestDispatcher rd=request.getRequestDispatcher("register.jsp"); 	
 			rd.forward(request,response);

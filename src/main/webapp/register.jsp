@@ -33,6 +33,7 @@ Enter password
 Enter password again
 <input type ="password" name="repass">
 <br><br>
+${error }
 <br><br>
 <input type="submit" value ="register">
 
